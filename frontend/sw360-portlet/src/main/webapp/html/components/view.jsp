@@ -281,7 +281,7 @@
                         "vndrs": '<sw360:DisplayCollection value="${component.vendorNames}"/>',
                         "name": "${component.name}",
                         "lics": "<tags:TrimLineBreaks input="${licenseCollectionTagOutput}"/>",
-                        "cType": '<sw360:DisplayEnum value="${component.componentType}"/>',
+                        "cType": "<sw360:DisplayEnumTooltip value="${component.componentType}"/>",
                         "lRelsSize": "${component.releaseIdsSize}",
                         "attsSize": "${component.attachmentsSize}"
                     });
@@ -385,3 +385,6 @@
 </script>
 <%@include file="/html/utils/includes/modal.jspf" %>
 <%@include file="/html/utils/includes/vulnerabilityModal.jspf" %>
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/tooltips.css">
+

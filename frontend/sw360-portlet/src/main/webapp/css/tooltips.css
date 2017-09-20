@@ -1,0 +1,50 @@
+/**
+ * Copyright Siemens AG, 2017. Part of the SW360 Portal Project.
+ *
+ * SPDX-License-Identifier: EPL-1.0
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Description: Tooltips for sw360 enumss
+ *
+ * Author: thomas.maier@evosoft.com
+ *
+ */
+
+.sw360-tt:hover:after {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Enum: ComponentType */
+.sw360-tt-ComponentType-OSS:hover:after {
+    content: "tooltip for componenttype - oss";
+}
+
+.sw360-tt-ComponentType-COTS:hover:after {
+    content: "tooltip for componenttype - cots";
+}
+
+.sw360-tt-ComponentType-INTERNAL:hover:after {
+    content: "tooltip for componenttype - internal";
+}
+
+/* Enum: Visibilty */
+.sw360-tt-Visibility-PRIVATE:hover:after {
+    content: "tooltip for visibility - private";
+}
+
+.sw360-tt-Visibility-EVERYONE:hover:after {
+    content: "tooltip for visibility - everyone";
+}

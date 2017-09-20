@@ -26,7 +26,7 @@
     </tr>
     <tr>
         <td>Visibility:</td>
-        <td><sw360:DisplayEnum value="${project.visbility}"/></td>
+        <td><sw360:DisplayEnumTooltip value="${project.visbility}"/></td>
     </tr>
     <tr>
         <td>Created on:</td>
@@ -105,3 +105,5 @@
         <td><sw360:DisplayMapOfEmailSets value="${project.roles}"/></td>
     </tr>
 </table>
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/tooltips.css">
