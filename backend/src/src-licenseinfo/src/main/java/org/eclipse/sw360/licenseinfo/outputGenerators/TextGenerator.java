@@ -13,9 +13,11 @@
 
 package org.eclipse.sw360.licenseinfo.outputGenerators;
 
+
 import org.apache.log4j.Logger;
 import org.eclipse.sw360.datahandler.thrift.SW360Exception;
 import org.eclipse.sw360.datahandler.thrift.licenseinfo.LicenseInfoParsingResult;
+
 
 import java.util.Collection;
 
@@ -23,18 +25,45 @@ public class TextGenerator extends OutputGenerator<String> {
     private static final Logger LOGGER = Logger.getLogger(TextGenerator.class);
     private static final String LICENSE_INFO_TEMPLATE_FILE = "textLicenseInfoFile.vm";
 
+    private String testHTML;
+
+
     public TextGenerator() {
         super("txt", "License information as TEXT", false, "text/plain");
+        testHTML = "";
+        testHTML += "<em>Unordered</em>\n";
+        testHTML += "<ul>\n";
+        testHTML += "    <li>Item 1</li>\n";
+        testHTML += "    <li>Item 2</li>\n";
+        testHTML += "    <li>Item 3</li>\n";
+        testHTML += "</ul>\n";
+        testHTML += "<strong>Ordered</strong>\n";
+        testHTML += "<ol>\n";
+        testHTML += "    <li>Item 1</li>\n";
+        testHTML += "    <li>Item 2</li>\n";
+        testHTML += "    <li>Item 3</li>\n";
+        testHTML += "</ol> \n";
+        testHTML += "<p> This is a new paragraph </p> \n";
+
     }
 
     @Override
     public String generateOutputFile(Collection<LicenseInfoParsingResult> projectLicenseInfoResults, String projectName) throws SW360Exception {
+        Collection<LicenseInfoParsingResult> renderedProjectLicenseInfoResults = renderLicenseInfoParsingResults(projectLicenseInfoResults);
         try {
-            return renderTemplateWithDefaultValues(projectLicenseInfoResults, LICENSE_INFO_TEMPLATE_FILE);
+            return renderTemplateWithDefaultValues(renderedProjectLicenseInfoResults, LICENSE_INFO_TEMPLATE_FILE);
         } catch (Exception e) {
             LOGGER.error("Could not generate text licenseinfo file", e);
             return "License information could not be generated.\nAn exception occurred: " + e.toString();
         }
     }
+
+    @Override
+    protected String renderLicenseText(String licenseText) {
+        //SimpleHtmlRenderer renderer = new SimpleHtmlRenderer(licenseText);
+        SimpleHtmlRenderer renderer = new SimpleHtmlRenderer(testHTML);
+        return renderer.renderHtml();
+    }
+
 }
 
