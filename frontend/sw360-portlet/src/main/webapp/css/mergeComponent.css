@@ -1,0 +1,65 @@
+#componentMergeWizard .wizardBody .step div.spinner {
+    display: block;
+
+    width: 100%;
+    height: 200px;
+
+    vertical-align: middle;
+    text-align: center;
+}
+
+#componentMergeWizard .wizardBody .step div, #componentMergeWizard .wizardBody .step label {
+    display: inline-block;
+}
+
+#componentMergeWizard .wizardBody .step .stepFeedback {
+
+}
+
+#componentMergeWizard .wizardBody .step input[type="radio"] {
+    margin-top: 0;
+    margin-right: 5px;
+}
+
+#componentMergeWizard .wizardBody .merge.category {
+    display: block;
+
+    border-bottom: 2px solid #66c1c2;
+    width: 100%;
+
+    background-color: #b2e0e0;
+    font-weight: bold;
+}
+
+#componentMergeWizard .wizardBody .merge.line {
+    display: block;
+
+    border: 1px solid black;
+    width: 100%;
+}
+
+#componentMergeWizard .wizardBody .merge.single.header {
+    display: block;
+
+    width: 100%;
+
+    background-color: #b2e0e0;
+}
+
+#componentMergeWizard .wizardBody .merge.merge-row {
+    width: 100%;
+}
+
+#componentMergeWizard .wizardBody .merge.single.left {
+    width: 45%;
+    height: 20px;
+}
+#componentMergeWizard .wizardBody .merge.single.mid {
+    width: 8%;
+
+    text-align: center;
+}
+#componentMergeWizard .wizardBody .merge.single.right {
+    width: 45%;
+    height: 20px;
+}
